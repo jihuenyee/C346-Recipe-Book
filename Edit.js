@@ -15,7 +15,16 @@ const Edit = ({ navigation, route }) => {
                     <Button
                         title={"Save"}
                         onPress={() => {
-                            let indexnum = 0; // Update this logic based on category
+                            let indexnum = 1
+                            if (route.params.type == "Cake"){
+                                indexnum = 0;
+                            }
+                            else if (route.params.type == "Bread"){
+                                indexnum = 1;
+                            }
+                            else if (route.params.type == "Pie"){
+                                indexnum = 2;
+                            }// Update this logic based on category
                             database[indexnum].data[index].key = name;
                             navigation.navigate("Home");
                         }}
@@ -25,7 +34,16 @@ const Edit = ({ navigation, route }) => {
                     <Button
                         title={"Delete"}
                         onPress={() => {
-                            let indexnum = 0; // Update this logic based on category
+                            let indexnum = 0;
+                            if (route.params.type == "Cake"){
+                                indexnum = 0;
+                            }
+                            else if (route.params.type == "Bread"){
+                                indexnum = 1;
+                            }
+                            else if (route.params.type == "Pie"){
+                                indexnum = 2;
+                            }// Update this logic based on category
                             Alert.alert("Are you sure?", '', [
                                 {
                                     text: 'Yes',
